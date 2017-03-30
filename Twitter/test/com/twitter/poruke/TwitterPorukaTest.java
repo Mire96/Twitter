@@ -8,8 +8,11 @@ import org.junit.Test;
 
 public class TwitterPorukaTest {
 
+	TwitterPoruka a;
+
 	@Before
 	public void setUp() throws Exception {
+		a = new TwitterPoruka("Milos", "Hello world");
 	}
 
 	@After
@@ -18,27 +21,61 @@ public class TwitterPorukaTest {
 
 	@Test
 	public void testGetKorisnik() {
-		fail("Not yet implemented");
+		assertEquals("Milos", a.getKorisnik());
 	}
 
 	@Test
 	public void testSetKorisnik() {
-		fail("Not yet implemented");
+		a.setKorisnik("Menjam");
+
+		assertEquals("Menjam", a.getKorisnik());
+	}
+
+	@Test(expected = RuntimeException.class)
+	public void testSetKorisnikPrazan() {
+		a.setKorisnik("");
+
+	}
+
+	@Test(expected = RuntimeException.class)
+	public void testSetKorisnikNull() {
+		a.setKorisnik(null);
+
 	}
 
 	@Test
 	public void testGetPoruka() {
-		fail("Not yet implemented");
+		assertEquals("Hello world", a.getPoruka());
 	}
 
 	@Test
 	public void testSetPoruka() {
-		fail("Not yet implemented");
+		a.setPoruka("Menjam");
+
+		assertEquals("Menjam", a.getPoruka());
+	}
+
+	@Test(expected = RuntimeException.class)
+	public void testSetPorukaPrazan() {
+		a.setPoruka("");
+
+	}
+
+	@Test(expected = RuntimeException.class)
+	public void testSetPorukaNull() {
+		a.setPoruka(null);
+
+	}
+
+	@Test (expected = RuntimeException.class)
+	public void testSetPorukaPreko140() {
+		a.setPoruka("ajajajajajajaajajajajajajajajaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+		
 	}
 
 	@Test
 	public void testToString() {
-		fail("Not yet implemented");
+		assertEquals("KORISNIK:Milos PORUKA:Hello world", a.toString());
 	}
 
 }
