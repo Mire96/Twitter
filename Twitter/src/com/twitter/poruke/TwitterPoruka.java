@@ -18,6 +18,17 @@ public class TwitterPoruka {
 	
 	
 	/**
+	 * Konstruktor za klasu, namesta ime korisnika i sadrzaj poruke.
+	 * @param korisnik
+	 * @param poruka
+	 */
+	public TwitterPoruka(String korisnik, String poruka) {
+		super();
+		this.korisnik = korisnik;
+		this.poruka = poruka;
+	}
+
+	/**
 	 * Metoda koja vraca naziv korisnika
 	 * @return String
 	 */
