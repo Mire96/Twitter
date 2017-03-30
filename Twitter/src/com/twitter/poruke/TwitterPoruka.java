@@ -22,6 +22,8 @@ public class TwitterPoruka {
 	 * @param korisnik
 	 * @param poruka
 	 */
+	public TwitterPoruka(){};
+	
 	public TwitterPoruka(String korisnik, String poruka) {
 		super();
 		this.korisnik = korisnik;
