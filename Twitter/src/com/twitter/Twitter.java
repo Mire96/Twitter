@@ -4,13 +4,32 @@ import java.util.LinkedList;
 
 import com.twitter.poruke.TwitterPoruka;
 
+/**Klasa predstavlja twitter.
+ * 
+ * @author Milos Mirkovic
+ * @version 1.0.0
+ */
 public class Twitter {
+	
+	/**
+	 * Predstavlja listu sacuvanih poruka.
+	 */
 	private LinkedList<TwitterPoruka> poruke = new LinkedList<TwitterPoruka>();
-
+	
+	/**
+	 * Vraca sve sacuvane poruke
+	 * @return LinkedList tipa TwitterPoruke
+	 */
 	public LinkedList<TwitterPoruka> vratiSvePoruke() {
 		return poruke;
 	}
-
+	
+	/**
+	 * Pravi novu poruku na osnovu unesenih parametara.
+	 * Unosi je na kraj liste.
+	 * @param String korisnik
+	 * @param String poruka
+	 */
 	public void unesi(String korisnik, String poruka) {
 		// Pravi se nova poruka i puni podacima.
 		TwitterPoruka tp = new TwitterPoruka();
@@ -19,7 +38,16 @@ public class Twitter {
 		// Poruka se unosi u listu na kraj
 		poruke.addLast(tp);
 	}
-
+	
+	
+	/**Pretrazuje sve poruke u listi, i trazi one koje sadrze tag koji je dat kroz parametar.
+	 * Sve poruke koje sadrze tag se vracaju u vidu niza.
+	 * 
+	 * @throws RuntimeException ako je uneti tag null.
+	 * @param int maxBroj
+	 * @param String tag
+	 * @return	TwitterPoruka[]
+	 */
 	public TwitterPoruka[] vratiPoruke(int maxBroj, String tag) {
 		if (tag == null || tag.isEmpty())
 			throw new RuntimeException("Morate uneti tag");

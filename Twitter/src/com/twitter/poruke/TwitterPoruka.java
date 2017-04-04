@@ -16,14 +16,16 @@ public class TwitterPoruka {
 	 */
 	private String poruka;
 	
-	
 	/**
-	 * Konstruktor za klasu, namesta ime korisnika i sadrzaj poruke.
-	 * @param korisnik
-	 * @param poruka
+	 * Predstavlja prazan konstruktor za ovu klasu
 	 */
 	public TwitterPoruka(){};
 	
+	/**
+	 * Konstruktor za klasu, namesta ime korisnika i sadrzaj poruke.
+	 * @param korisnik String 
+	 * @param poruka String
+	 */
 	public TwitterPoruka(String korisnik, String poruka) {
 		super();
 		this.korisnik = korisnik;
@@ -40,7 +42,7 @@ public class TwitterPoruka {
 	
 	/**
 	 * Podesava ime korisnika na ono koje je uneto.
-	 * @param korisnik
+	 * @param korisnik String 
 	 */
 	public void setKorisnik(String korisnik) {
 		if (korisnik == null || korisnik.isEmpty())
@@ -58,7 +60,7 @@ public class TwitterPoruka {
 	
 	/**
 	 * Podesava sadrzaj poruke na onaj koji je unet.
-	 * @param poruka
+	 * @param poruka String 
 	 */
 	public void setPoruka(String poruka) {
 		if (poruka == null || poruka == "" || poruka.length() > 140)
