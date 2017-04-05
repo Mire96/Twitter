@@ -23,8 +23,8 @@ public class TwitterPoruka {
 	
 	/**
 	 * Konstruktor za klasu, namesta ime korisnika i sadrzaj poruke.
-	 * @param korisnik String 
-	 * @param poruka String
+	 * @param korisnik Predstavlja ime korisnika.
+	 * @param poruka Predstavlja sadrzaj poruke
 	 */
 	public TwitterPoruka(String korisnik, String poruka) {
 		super();
@@ -34,7 +34,7 @@ public class TwitterPoruka {
 
 	/**
 	 * Metoda koja vraca naziv korisnika
-	 * @return String
+	 * @return Ime korisnika u obliku String.
 	 */
 	public String getKorisnik() {
 		return korisnik;
@@ -42,7 +42,8 @@ public class TwitterPoruka {
 	
 	/**
 	 * Podesava ime korisnika na ono koje je uneto.
-	 * @param korisnik String 
+	 * @param korisnik Predstavlja ime korisnika.
+	 * @throws RuntimeException ako je korisnik null ili prazan string.
 	 */
 	public void setKorisnik(String korisnik) {
 		if (korisnik == null || korisnik.isEmpty())
@@ -52,7 +53,7 @@ public class TwitterPoruka {
 	
 	/**
 	 * Vraca sadrzaj poruke.
-	 * @return String
+	 * @return Sadrzaj poruke je u obliku String
 	 */
 	public String getPoruka() {
 		return poruka;
@@ -60,7 +61,8 @@ public class TwitterPoruka {
 	
 	/**
 	 * Podesava sadrzaj poruke na onaj koji je unet.
-	 * @param poruka String 
+	 * @param poruka Predstavlja sadrzaj poruke
+	 * @throws RuntimeException Ako je sadrzaj poruke null, prazan string ili ako duzina poruke prelazi 140 karaktera. 
 	 */
 	public void setPoruka(String poruka) {
 		if (poruka == null || poruka == "" || poruka.length() > 140)
@@ -70,7 +72,8 @@ public class TwitterPoruka {
 	
 	/**
 	 * Prikazuje ime korisnika i poruku u obliku String.
-	 * @return String
+	 * @return Vraca ime korisnika i sadrzaj poruke u formi sledeceg Stringa:
+	 *  KORISNIK: + "korisnik" + PORUKA: + "poruka".
 	 */
 	public String toString() {
 		return "KORISNIK:" + korisnik + " PORUKA:" + poruka;

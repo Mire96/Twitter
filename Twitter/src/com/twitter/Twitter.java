@@ -27,8 +27,8 @@ public class Twitter {
 	/**
 	 * Pravi novu poruku na osnovu unesenih parametara.
 	 * Unosi je na kraj liste.
-	 * @param String korisnik
-	 * @param String poruka
+	 * @param korisnik Predstavlja ime korisnika
+	 * @param poruka Predstavlja sadrzaj poruke 
 	 */
 	public void unesi(String korisnik, String poruka) {
 		// Pravi se nova poruka i puni podacima.
@@ -43,10 +43,10 @@ public class Twitter {
 	/**Pretrazuje sve poruke u listi, i trazi one koje sadrze tag koji je dat kroz parametar.
 	 * Sve poruke koje sadrze tag se vracaju u vidu niza.
 	 * 
-	 * @throws RuntimeException ako je uneti tag null.
-	 * @param int maxBroj
-	 * @param String tag
-	 * @return	TwitterPoruka[]
+	 * @throws RuntimeException Ako je uneti tag null ili prazan string.
+	 * @param maxBroj Parametar odredjuje koliko najvise poruka zelite da vratite u vidu niza
+	 * @param tag Predstavlja rec koju pretrazujete u porukama 
+	 * @return	TwitterPoruka[] Sve poruke koje sadrze uneseni tag.
 	 */
 	public TwitterPoruka[] vratiPoruke(int maxBroj, String tag) {
 		if (tag == null || tag.isEmpty())
