@@ -14,7 +14,7 @@ public class Twitter {
 	/**
 	 * Predstavlja listu sacuvanih poruka.
 	 */
-	public LinkedList<TwitterPoruka> poruke = new LinkedList<TwitterPoruka>();
+	private LinkedList<TwitterPoruka> poruke = new LinkedList<TwitterPoruka>();
 	
 	/**
 	 * Vraca sve sacuvane poruke
@@ -71,6 +71,14 @@ public class Twitter {
 				} else
 					break;
 		return rezultat;
+	}
+
+	public LinkedList<TwitterPoruka> getPoruke() {
+		return poruke;
+	}
+
+	public void setPoruke(LinkedList<TwitterPoruka> poruke) {
+		this.poruke = poruke;
 	}
 
 }

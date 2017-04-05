@@ -22,9 +22,9 @@ public class TwitterTest {
 		tweet1 = new TwitterPoruka("Milos", "Hello world");
 		tweet2 = new TwitterPoruka("Milos", "Hello");
 		tweet3 = new TwitterPoruka("Nikola", "The world is mine");
-		listaPoruka.poruke.add(tweet1);
-		listaPoruka.poruke.add(tweet2);
-		listaPoruka.poruke.add(tweet3);
+		listaPoruka.getPoruke().add(tweet1);
+		listaPoruka.getPoruke().add(tweet2);
+		listaPoruka.getPoruke().add(tweet3);
 	}
 
 	@After
@@ -33,15 +33,15 @@ public class TwitterTest {
 
 	@Test
 	public void testVratiSvePoruke() {
-		assertEquals(listaPoruka.poruke, listaPoruka.vratiSvePoruke());
+		assertEquals(listaPoruka.getPoruke(), listaPoruka.vratiSvePoruke());
 	}
 
 	@Test
 	public void testUnesi() {
 		listaPoruka.unesi("Dzoni", "Muy loca");
 		TwitterPoruka tester = new TwitterPoruka("Dzoni", "Muy loca");
-		assertEquals(tester.getKorisnik(), listaPoruka.poruke.getLast().getKorisnik());
-		assertEquals(tester.getPoruka(), listaPoruka.poruke.getLast().getPoruka()); 
+		assertEquals(tester.getKorisnik(), listaPoruka.getPoruke().getLast().getKorisnik());
+		assertEquals(tester.getPoruka(), listaPoruka.getPoruke().getLast().getPoruka()); 
 	}
 	
 	@Test
